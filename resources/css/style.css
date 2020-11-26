@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #1c1e22;
+  font-size: 1.3rem;
+  color: #7e8792;
+  font-family: sans-serif;
+}
+
+/***************FILTER CHOICES***************/
+
+.filters {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  height: 100px;
+  align-items: center;
+  background-color: #000;
+  margin: 50px 0;
+}
+
+.filter-choice {
+  cursor: pointer;
+  border: 1px solid rgba(126, 135, 146, 0.4);
+  padding-bottom: 10px;
+  border-radius: 2px;
+}
+
+.filter-choice img {
+  width: 100px;
+  margin-bottom: 7px;
+}
+
+/***************IMAGE***************/
+
+.filter {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.filter img {
+  width: 100%;
+}
+
+/***************1977 FILTER***************/
+
+.filter-1977 {
+  -webkit-filter: contrast(110%) brightness(110%) saturate(130%);
+  filter: contrast(110%) brightness(110%) saturate(130%);
+}
+
+.filter-1977::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: screen;
+  background: rgba(243, 106, 188, 0.3);
+}
+
+/***************ADEN FILTER***************/
+
+.aden {
+  -webkit-filter: contrast(90%) brightness(120%) saturate(85%) hue-rotate(20deg);
+  filter: contrast(90%) brightness(120%) saturate(85%) hue-rotate(20deg);
+}
+
+.aden::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: darken;
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(66, 10, 14, 0.2) 1,
+    rgba(66, 10, 14, 0)
+  );
+  background: linear-gradient(
+    to right,
+    rgba(66, 10, 14, 0.2) 1,
+    rgba(66, 10, 14, 0)
+  );
+}
+
+/***************AMARO FILTER***************/
+
+.amaro {
+  -webkit-filter: contrast(90%) brightness(110%) saturate(150%)
+    hue-rotate(-10deg);
+  filter: contrast(90%) brightness(110%) saturate(150%) hue-rotate(-10deg);
+}
+
+/***************BRANNAN FILTER***************/
+
+.brannan {
+  -webkit-filter: contrast(140%) sepia(50%);
+  filter: contrast(140%) sepia(50%);
+}
+
+.brannan::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  background: rgba(161, 44, 199, 0.31);
+}
+
+/***************BROOKLYN FILTER***************/
+
+.brooklyn {
+  -webkit-filter: contrast(90%) brightness(110%);
+  filter: contrast(90%) brightness(110%);
+}
+
+.brooklyn::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  background: -webkit-radial-gradient(
+    50% 50%,
+    circle closest-corner,
+    rgba(168, 223, 193, 0.4) 1,
+    rgba(183, 196, 200, 0.2)
+  );
+  background: radial-gradient(
+    50% 50%,
+    circle closest-corner,
+    rgba(168, 223, 193, 0.4) 1,
+    rgba(183, 196, 200, 0.2)
+  );
+}
