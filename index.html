@@ -8,41 +8,122 @@
   <title>Image Filter</title>
 </head>
 <body>
+
   <main>
-    <section class="filters">
-      <figure class="filter-choice" id="filter-1977">
-        <img src="./resources/images/1977.png" alt="">
-        <figcaption>1977</figcaption>
-      </figure>
+    <div class="content">
+      <section class="filters">
+        <figure class="filter-choice" id="filter-1977">
+          <img src="./resources/images/1977.png" alt="">
+          <figcaption>1977</figcaption>
+        </figure>
 
-      <figure class="filter-choice" id="aden">
-        <img src="./resources/images/aden.png" alt="">
-        <figcaption>Aden</figcaption>
-      </figure>
+        <figure class="filter-choice" id="aden">
+          <img src="./resources/images/aden.png" alt="">
+          <figcaption>Aden</figcaption>
+        </figure>
 
-      <figure class="filter-choice" id="amaro">
-        <img src="./resources/images/amaro.png" alt="">
-        <figcaption>Amaro</figcaption>
-      </figure>
+        <figure class="filter-choice" id="amaro">
+          <img src="./resources/images/amaro.png" alt="">
+          <figcaption>Amaro</figcaption>
+        </figure>
 
-      <figure class="filter-choice" id="brannan">
-        <img src="./resources/images/brannan.png" alt="">
-        <figcaption>Brannan</figcaption>
-      </figure>
+        <figure class="filter-choice" id="brannan">
+          <img src="./resources/images/brannan.png" alt="">
+          <figcaption>Brannan</figcaption>
+        </figure>
 
-      <figure class="filter-choice" id="brooklyn">
-        <img src="./resources/images/brooklyn.png" alt="">
-        <figcaption>Brooklyn</figcaption>
-      </figure>
-    </section>
+        <figure class="filter-choice" id="brooklyn">
+          <img src="./resources/images/brooklyn.png" alt="">
+          <figcaption>Brooklyn</figcaption>
+        </figure>
 
-    <section>
-      <figure class="filter" id="filter">
-        <img src="./resources/images/source-image.jpg" alt="" >
-      </figure>
-    </section>
+        <figure class="filter-choice" id="clarendon">
+          <img src="./resources/images/clarendon.png" alt="">
+          <figcaption>Clarendon</figcaption>
+        </figure>
+
+        <figure class="filter-choice" id="early-bird">
+          <img src="./resources/images/early-bird.png" alt="">
+          <figcaption>Early bird</figcaption>
+        </figure>
+
+        <figure class="filter-choice" id="gingham">
+          <img src="./resources/images/gingham.png" alt="">
+          <figcaption>Gingham</figcaption>
+        </figure>
+
+        <figure class="filter-choice" id="hudson">
+          <img src="./resources/images/hudson.png" alt="">
+          <figcaption>Hudson</figcaption>
+        </figure>
+
+        <figure class="filter-choice" id="inkwell">
+          <img src="./resources/images/inkwell.png" alt="">
+          <figcaption>Inkwell</figcaption>
+        </figure>
+
+        <figure class="filter-choice" id="lofi">
+          <img src="./resources/images/lofi.png" alt="">
+          <figcaption>Lofi</figcaption>
+        </figure>
+        <figure class="filter-choice" id="lofi">
+          <img src="./resources/images/lofi.png" alt="">
+          <figcaption>Lofi</figcaption>
+        </figure>
+        <figure class="filter-choice" id="lofi">
+          <img src="./resources/images/lofi.png" alt="">
+          <figcaption>Lofi</figcaption>
+        </figure>
+        <figure class="filter-choice" id="lofi">
+          <img src="./resources/images/lofi.png" alt="">
+          <figcaption>Lofi</figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <label for="image-uploader"><i class="fas fa-cloud-upload-alt"></i> Upload Image</label>
+        <input type="file" id="image-uploader">
+        <figure class="filter" id="filter">
+          <img src="./resources/images/source-image.jpg" alt="" >
+        </figure>
+      </section>
+    </div>
+
+    <div class="panel">
+      <div class="custom-filters">
+        <h2>Filters</h2>
+        <label for="contrast">Contrast</label>
+        <input type="range" id="contrast" min="0" max="200">
+
+        <label for="brightness">Brightness</label>
+        <input type="range" id="brightness" min="0" max="200">
+
+        <label for="saturate">Saturate</label>
+        <input type="range" id="saturate" min="0" max="200">
+
+        <label for="sepia">Sepia</label>
+        <input type="range" id="sepia" min="0" max="100" value="0">
+
+        <label for="grayscale">Grayscale</label>
+        <input type="range" id="grayscale" min="0" max="100" value="0">
+
+        <label for="invert">Invert</label>
+        <input type="range" id="invert" min="0" max="100" value="0">
+
+        <label for="hue-rotate">Hue Rotate</label>
+        <input type="range" id="hue-rotate" min="0" max="360" value="0">
+
+        <label for="blur">Blur</label>
+        <input type="range" id="blur" min="0" max="10" value="0">
+      </div>
+    </div>
   </main>
 
+  <!-- <footer>
+    <small>&copy; 2020 Samy Adel</small>
+  </footer> -->
+
+  <script src="https://kit.fontawesome.com/e02b0205d6.js" crossorigin="anonymous"></script>
   <script src="./resources/scripts/script.js"></script>
 </body>
 </html>
