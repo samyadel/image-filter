@@ -8,84 +8,113 @@
   <title>Image Filter</title>
 </head>
 <body>
+  <div class="gradient"></div>
+  <header>
+    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="29" viewBox="0 0 29 29" class="logo">
+      <g fill-rule="evenodd">
+        <path
+          d="M8.495 3.628S4.939 4.95 2.839 9.922l11.585-2.19-5.929-4.104zm-5.831 7.003s-1.568 3.455.481 8.448l6.612-9.763-7.093 1.315zm.924 8.94s1.322 3.556 6.294 5.656L7.693 13.64l-4.105 5.931zm7.003 5.83s3.455 1.567 8.448-.481l-9.763-6.61 1.315 7.091zm9.131-.772s3.557-1.322 5.656-6.296l-11.586 2.189 5.93 4.107zm5.349-15.452l-6.61 9.763 7.093-1.316c0 .001 1.566-3.454-.483-8.447zm-.443-.492s-1.322-3.556-6.295-5.655l2.189 11.585 4.106-5.93zm-7.004-5.83s-3.453-1.568-8.447.482l9.764 6.61-1.317-7.092z">
+        </path>
+        <path
+          d="M14.151 0C6.336 0 0 6.336 0 14.15 0 21.963 6.335 28.3 14.151 28.3c7.813 0 14.149-6.338 14.149-14.15C28.301 6.336 21.965 0 14.151 0zm0 27.206c-7.199 0-13.057-5.857-13.057-13.056 0-7.199 5.858-13.056 13.057-13.056 7.197 0 13.055 5.857 13.055 13.056 0 7.199-5.858 13.056-13.055 13.056z">
+        </path>
+      </g>
+    </svg>
+
+    <nav>
+      <ul>
+        <li><a href="https://www.github.com/samyadel/image-filter" target="_blank"><button><i class="fab fa-github"></i></button></a></li>
+      </ul>
+    </nav>
+  </header>
 
   <main>
     <div class="content">
       <section class="filters">
-        <figure class="filter-choice" id="filter-1977">
-          <img src="./resources/images/1977.png" alt="">
+        <figure class="filter-choice filter-1977" id="filter-1977">
+          <img src="./resources/images/source-image.jpg" alt="">
           <figcaption>1977</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="aden">
+        <figure class="filter-choice aden" id="aden">
           <img src="./resources/images/aden.png" alt="">
           <figcaption>Aden</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="amaro">
+        <figure class="filter-choice amaro" id="amaro">
           <img src="./resources/images/amaro.png" alt="">
           <figcaption>Amaro</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="brannan">
+        <figure class="filter-choice brannan" id="brannan">
           <img src="./resources/images/brannan.png" alt="">
           <figcaption>Brannan</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="brooklyn">
+        <figure class="filter-choice brooklyn" id="brooklyn">
           <img src="./resources/images/brooklyn.png" alt="">
           <figcaption>Brooklyn</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="clarendon">
+        <figure class="filter-choice clarendon" id="clarendon">
           <img src="./resources/images/clarendon.png" alt="">
           <figcaption>Clarendon</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="early-bird">
+        <figure class="filter-choice early-bird" id="early-bird">
           <img src="./resources/images/early-bird.png" alt="">
           <figcaption>Early bird</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="gingham">
+        <figure class="filter-choice gingham" id="gingham">
           <img src="./resources/images/gingham.png" alt="">
           <figcaption>Gingham</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="hudson">
+        <figure class="filter-choice hudson" id="hudson">
           <img src="./resources/images/hudson.png" alt="">
           <figcaption>Hudson</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="inkwell">
+        <figure class="filter-choice inkwell" id="inkwell">
           <img src="./resources/images/inkwell.png" alt="">
           <figcaption>Inkwell</figcaption>
         </figure>
 
-        <figure class="filter-choice" id="lofi">
+        <figure class="filter-choice lofi" id="lofi">
           <img src="./resources/images/lofi.png" alt="">
           <figcaption>Lofi</figcaption>
         </figure>
-        <figure class="filter-choice" id="lofi">
+
+        <figure class="filter-choice lofi" id="lofi">
           <img src="./resources/images/lofi.png" alt="">
           <figcaption>Lofi</figcaption>
         </figure>
-        <figure class="filter-choice" id="lofi">
+
+        <figure class="filter-choice lofi" id="lofi">
           <img src="./resources/images/lofi.png" alt="">
           <figcaption>Lofi</figcaption>
         </figure>
-        <figure class="filter-choice" id="lofi">
+
+        <figure class="filter-choice lofi" id="lofi">
           <img src="./resources/images/lofi.png" alt="">
           <figcaption>Lofi</figcaption>
         </figure>
       </section>
 
-      <section>
-        <label for="image-uploader"><i class="fas fa-cloud-upload-alt"></i> Upload Image</label>
-        <input type="file" id="image-uploader">
+      <section class="main-viewport">
+        <div class="controls">
+          <label for="image-uploader"><i class="fas fa-cloud-upload-alt"></i> Upload Image</label>
+          <input type="file" id="image-uploader">
+
+          <label for="hide-presets"><i class="fas fa-sliders-h"></i> Hide Presets</label>
+          <input type="checkbox" id="hide-presets">
+        </div>
         <figure class="filter" id="filter">
           <img src="./resources/images/source-image.jpg" alt="" >
         </figure>
+
+        <small>&copy; 2020 Samy Adel</small>
       </section>
     </div>
 
@@ -116,13 +145,31 @@
         <label for="blur">Blur</label>
         <input type="range" id="blur" min="0" max="10" value="0">
       </div>
+
+      <div class="overlay">
+        <h2>Overlay</h2>
+
+        <ul>
+          <li>
+            <input type="radio" id="none" name="overlay" checked>
+            <label for="none">None</label>
+          </li>
+          <li>
+            <input type="radio" id="solid" name="overlay">
+            <label for="solid">Solid Background</label>
+          </li>
+        </ul>
+
+        <div class="solid-overlay-options">
+          <input type="color" id="color">
+          <label for="color">Background Color</label>
+
+          <label for="opacity">Opacity</label>
+          <input type="range" id="opacity" min="0" max="100">
+        </div>
+      </div>
     </div>
   </main>
-
-  <!-- <footer>
-    <small>&copy; 2020 Samy Adel</small>
-  </footer> -->
-
   <script src="https://kit.fontawesome.com/e02b0205d6.js" crossorigin="anonymous"></script>
   <script src="./resources/scripts/script.js"></script>
 </body>
