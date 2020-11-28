@@ -104,14 +104,16 @@
 
       <section class="main-viewport">
         <div class="controls">
-          <label for="image-uploader"><i class="fas fa-cloud-upload-alt"></i> Upload Image</label>
-          <input type="file" id="image-uploader">
+          <div>
+            <label for="image-uploader"><i class="fas fa-cloud-upload-alt"></i> Upload Image</label>
+            <input type="file" id="image-uploader">
+            <a id="image-downloader" href="" download><i class="fas fa-download"></i> Download Image</a>
+          </div>
 
           <label for="hide-presets"><i class="fas fa-sliders-h"></i> Hide Presets</label>
           <input type="checkbox" id="hide-presets">
         </div>
         <figure class="filter" id="filter">
-          <!-- <div class="overlay-test"></div> -->
           <img src="./resources/images/source-image.jpg" alt="" >
         </figure>
 
@@ -172,6 +174,7 @@
     </div>
   </main>
   <script src="https://kit.fontawesome.com/e02b0205d6.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
   <script src="./resources/scripts/script.js"></script>
 </body>
 </html>

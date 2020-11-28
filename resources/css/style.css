@@ -125,8 +125,14 @@ figcaption {
   padding: 0 50px;
 }
 
-label[for="image-uploader"],
-label[for="hide-presets"] {
+.controls div {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.controls label,
+.controls button {
   color: lightskyblue;
   cursor: pointer;
 }
@@ -142,10 +148,9 @@ input[type="checkbox"] {
 .filter {
   position: relative;
   width: 1000px;
-  margin: 0 auto;
+  margin: 60px auto 0;
   border-radius: 5px;
   overflow: hidden;
-  margin-top: 60px;
 }
 
 .filter img {

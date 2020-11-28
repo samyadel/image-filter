@@ -3,6 +3,7 @@
 const filters = [...document.querySelectorAll(".filters *")];
 const filterImages = [...document.querySelectorAll(".filter-choice img")];
 const imageUploader = document.getElementById("image-uploader");
+const imageDownloader = document.getElementById("image-downloader");
 const hidePresets = document.getElementById("hide-presets");
 const image = document.getElementById("filter");
 const rangeInputs = [
@@ -27,6 +28,16 @@ const imageFilters = {
 };
 
 let hex;
+let base64image;
+
+// window.addEventListener("load", () => {
+//   html2canvas(document.querySelector("#filter")).then(function (canvas) {
+//     // document.querySelector(".main-viewport").appendChild(canvas);
+//     base64image = canvas.toDataURL("image/png");
+//     base64image = canvas.toDataURL("image/png");
+//     document.querySelector(".controls a").setAttribute("href", base64image);
+//   });
+// });
 
 filterImages.forEach((el) => (el.src = image.children[0].src));
 
@@ -45,6 +56,14 @@ filters.forEach((filter) => {
     } else {
       e.target.parentNode.style.borderColor = "rgb(21, 176, 237)";
     }
+
+    html2canvas(document.querySelector("#filter")).then(function (canvas) {
+      // document.querySelector(".main-viewport").appendChild(canvas);
+      let base64image = canvas.toDataURL("image/png");
+      base64image = canvas.toDataURL("image/png");
+      // document.querySelector(".controls a").setAttribute("href", base64image);
+      document.querySelector(".controls a").setAttribute("href", base64image);
+    });
   });
 });
 
@@ -62,6 +81,16 @@ imageUploader.addEventListener("change", () => {
   } else {
     image.children[0].src = "";
   }
+});
+
+imageDownloader.addEventListener("mousedown", () => {
+  html2canvas(document.querySelector("#filter")).then(function (canvas) {
+    // document.querySelector(".main-viewport").appendChild(canvas);
+    let base64image = canvas.toDataURL("image/png");
+    base64image = canvas.toDataURL("image/png");
+    // document.querySelector(".controls a").setAttribute("href", base64image);
+    document.querySelector(".controls a").setAttribute("href", base64image);
+  });
 });
 
 hidePresets.addEventListener("click", () => {
