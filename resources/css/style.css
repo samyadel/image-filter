@@ -1,3 +1,7 @@
+:root {
+  --overlay: rgba(0, 0, 0, 0.5);
+}
+
 * {
   box-sizing: border-box;
 }
@@ -474,7 +478,7 @@ input[type="range"]::-webkit-slider-thumb {
   left: 0;
   position: absolute;
   pointer-events: none;
-  background: rgba(243, 106, 188, 0.3);
+  background-color: var(--overlay);
 }
 
 /***************OVERLAY***************/
