@@ -30,14 +30,15 @@ const imageFilters = {
 let hex;
 let base64image;
 
-// window.addEventListener("load", () => {
-//   html2canvas(document.querySelector("#filter")).then(function (canvas) {
-//     // document.querySelector(".main-viewport").appendChild(canvas);
-//     base64image = canvas.toDataURL("image/png");
-//     base64image = canvas.toDataURL("image/png");
-//     document.querySelector(".controls a").setAttribute("href", base64image);
-//   });
-// });
+window.addEventListener("load", () => {
+  html2canvas(document.querySelector(".temp")).then(function (canvas) {
+    // document.querySelector(".main-viewport").appendChild(canvas);
+    let base64image = canvas.toDataURL("image/png");
+    base64image = canvas.toDataURL("image/png");
+    // document.querySelector(".controls a").setAttribute("href", base64image);
+    document.querySelector(".controls a").setAttribute("href", base64image);
+  });
+});
 
 filterImages.forEach((el) => (el.src = image.children[0].src));
 
@@ -84,7 +85,7 @@ imageUploader.addEventListener("change", () => {
 });
 
 imageDownloader.addEventListener("mousedown", () => {
-  html2canvas(document.querySelector("#filter")).then(function (canvas) {
+  html2canvas(document.querySelector(".temp")).then(function (canvas) {
     // document.querySelector(".main-viewport").appendChild(canvas);
     let base64image = canvas.toDataURL("image/png");
     base64image = canvas.toDataURL("image/png");
