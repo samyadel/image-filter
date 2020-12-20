@@ -31,11 +31,9 @@ let hex;
 let base64image;
 
 window.addEventListener("load", () => {
-  html2canvas(document.querySelector(".temp")).then(function (canvas) {
-    // document.querySelector(".main-viewport").appendChild(canvas);
+  html2canvas(document.getElementById("filter")).then(function (canvas) {
     let base64image = canvas.toDataURL("image/png");
     base64image = canvas.toDataURL("image/png");
-    // document.querySelector(".controls a").setAttribute("href", base64image);
     document.querySelector(".controls a").setAttribute("href", base64image);
   });
 });
@@ -59,10 +57,8 @@ filters.forEach((filter) => {
     }
 
     html2canvas(document.querySelector("#filter")).then(function (canvas) {
-      // document.querySelector(".main-viewport").appendChild(canvas);
       let base64image = canvas.toDataURL("image/png");
       base64image = canvas.toDataURL("image/png");
-      // document.querySelector(".controls a").setAttribute("href", base64image);
       document.querySelector(".controls a").setAttribute("href", base64image);
     });
   });
@@ -86,10 +82,8 @@ imageUploader.addEventListener("change", () => {
 
 imageDownloader.addEventListener("mousedown", () => {
   html2canvas(document.querySelector(".temp")).then(function (canvas) {
-    // document.querySelector(".main-viewport").appendChild(canvas);
     let base64image = canvas.toDataURL("image/png");
     base64image = canvas.toDataURL("image/png");
-    // document.querySelector(".controls a").setAttribute("href", base64image);
     document.querySelector(".controls a").setAttribute("href", base64image);
   });
 });
@@ -112,7 +106,7 @@ hidePresets.addEventListener("click", () => {
 });
 
 rangeInputs.forEach((el) => {
-  el.addEventListener("change", (e) => {
+  el.addEventListener("input", (e) => {
     imageFilters[e.target.id] = e.target.value;
     let filters = "";
     let unit = " ";
@@ -125,11 +119,16 @@ rangeInputs.forEach((el) => {
       } else {
         unit = "%";
       }
-
       filters += `${props}(${imageFilters[props]}${unit}) `;
     }
 
     image.style.filter = filters;
+
+    document.querySelector(
+      `label[for="${e.target.id}"]`
+    ).parentElement.children[1].textContent = `${e.target.value}${
+      e.target.id === "hue-rotate" ? "deg" : e.target.id === "blur" ? "px" : "%"
+    }`;
   });
 });
 
@@ -141,7 +140,7 @@ overlayOptions.forEach((el) => {
   });
 });
 
-colorPicker.addEventListener("change", () => {
+colorPicker.addEventListener("input", () => {
   hex = hexToRgb(
     colorPicker.value
       .split("")
@@ -155,11 +154,26 @@ colorPicker.addEventListener("change", () => {
   );
 });
 
-opacity.addEventListener("change", () => {
+opacity.addEventListener("input", (e) => {
+  hex = hexToRgb(
+    colorPicker.value
+      .split("")
+      .slice(1, colorPicker.value.split("").length)
+      .join("")
+  );
+
   document.documentElement.style.setProperty(
     "--overlay",
-    `rgba(${hex},${opacity.value})`
+    `rgba(${hex},${e.target.value})`
   );
+
+  document.querySelector(
+    `label[for="${e.target.id}"]`
+  ).parentElement.children[1].textContent = `${(e.target.value * 100).toFixed(
+    0
+  )}${
+    e.target.id === "hue-rotate" ? "deg" : e.target.id === "blur" ? "px" : "%"
+  }`;
 });
 
 function hexToRgb(hex) {
